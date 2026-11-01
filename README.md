@@ -1,6 +1,6 @@
 # Quantumult X 自维护规则
 
-当前状态：验证准备中，尚未发布，也未验证任何新增广告规则。
+当前状态：已公开发布，已实机验证订阅下载、规则命中及禁用恢复；尚未验证任何新增广告规则。手机上的测试订阅保持禁用。
 
 ## 首次验证
 
@@ -10,6 +10,14 @@
 2. 在圈 X 的分流资源中加入本仓库 `validation.list` 的 raw URL，标签设为 `qx-rules-test`，不启用资源解析器。
 3. 确认资源下载成功且包含一条规则；重新访问该域名，在圈 X 请求记录中确认命中该规则并拒绝。
 4. 禁用测试订阅，等待 DNS 缓存刷新后确认网站恢复。
+
+## 实测结果（2026-11-01，Asia/Shanghai）
+
+- 通过 iPhone 镜像操作 Quantumult X 和 Safari，启用前 `example.org` 正常加载。
+- 订阅地址：`https://raw.githubusercontent.com/wangjinzhao131/qx-rules/main/validation.list`；圈 X 确认更新 1 条分流规则。
+- 启用后 Safari 提示无法连接服务器；圈 X 的“DNS 阻止的域名”记录在 22:01:56 显示 `example.org` 命中 `HOST, EXAMPLE.ORG, REJECT`，策略为 `REJECT`。
+- 取消 `qx-rules-test` 勾选后，22:11 Safari 刷新恢复正常加载。现有其他订阅保持原状。
+- 此结果只验证自维护订阅的发布、加载、命中与回滚流程，不代表真实应用广告已被修复；不将示例域名用于持续监控。
 
 ## 维护约定
 
