@@ -1,0 +1,3 @@
+# Temporary subscription smoke test; never use as the production ad list.
+# Disable this subscription after verifying a reject hit and recovery.
+host, example.org, reject
